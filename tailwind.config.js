@@ -1,21 +1,16 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['index.html'],
+  content:['index.html'],
   theme: {
-   container:{
-    center:true,
-    padding:'16px'
-   },
     extend: {
-      colors: {
-        primary: '#4338ca',
-        dark: '#0f172a'
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
       },
-      screens:{
-        '2xl': '1320px'
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
       }
-    },
-  },
-  plugins: [],
+    }
+  }
 }
-
