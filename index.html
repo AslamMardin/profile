@@ -78,6 +78,40 @@
         </div>
     </section>
 
+    <section id="IS" class="mt-5 p-4 bg-yellow-300">
+        <h4 class="mb-2 text-2xl text-center">LEMBARAN BERKAS</h4>
+        <p class="mb-3">Jika Ingin Melihat Dengan Lengkap! Klik  <a href="https://drive.google.com/file/d/1pKteBRsJUM3KWa1dn1BRgsXHYr3UafLf/view?usp=drive_link" target="_blank" class="text-blue-800 decoration-blue-800">disini</a></p>
+     <div class="flex flex-wrap gap-1">
+        <div class="w-5/5 lg:w-1/4">
+            <div class="py-2 px-3 sm:text-center bg-slate-100 cursor-pointer rounded-[16px] hover:text-white hover:bg-indigo-700 item-IS" data-gambar="TK/SKTKK TK">
+            IJAZA TK
+          </div>
+        </div>
+
+        <div class="w-5/5 lg:w-1/4">
+            <div class="py-2 px-3 sm:text-center bg-slate-100  cursor-pointer rounded-[16px] hover:text-white hover:bg-indigo-700 item-IS" data-gambar="SD/IJAZA SD">
+            IJAZA SD
+          </div>
+        </div>
+
+
+        <div class="w-5/5 lg:w-1/4">
+            <div class="py-2 px-3 sm:text-center bg-slate-100  cursor-pointer rounded-[16px] hover:text-white hover:bg-indigo-700 item-IS" data-gambar="MTS/IJAZA MTS">
+            IJAZA MTS
+          </div>
+        </div>
+        <div class="w-5/5 lg:w-1/4">
+            <div class="py-2 px-3 sm:text-center bg-slate-100  cursor-pointer rounded-[16px] hover:text-white hover:bg-indigo-700 item-IS" data-gambar="SMK/IJAZA SMK">
+            IJAZA SMK
+          </div>
+        </div>
+     </div>
+    </section>
+
+    <section class="box-img">
+        <img src="img/masjid.jpg" id="gambarIS" alt="" class="max-w-full lg:w-50 h-auto">
+    </section>
+
 </body>
 <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <script>
@@ -85,5 +119,21 @@
     strings: ['Desainer', 'Programer', 'Nerwork', 'Hardware', 'Office'],
     typeSpeed: 200,
 });
+
+const imgElement = document.querySelector('#gambarIS');
+const items = document.querySelectorAll('.item-IS')
+items.forEach(item => {
+    item.addEventListener('click', function(e){
+        items.forEach(i => {
+            i.classList.remove('bg-indigo-700')
+            i.classList.add('bg-slate-100')
+        })
+        e.target.classList.remove('bg-slate-100')
+        e.target.classList.add('bg-indigo-700')
+        const gambar = e.target.dataset.gambar;
+        imgElement.src = "img/IJAZAH DAN SERTIFIKAT/"+ gambar + ".jpg";
+
+    })
+})
 </script>
 </html>
